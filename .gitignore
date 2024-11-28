@@ -49,6 +49,10 @@
 # Kernel Module Compile Results
 *.mod*
 *.cmd
+
+# os files
+.DS_Store
+
 .tmp_versions/
 modules.order
 Module.symvers
