@@ -1,4 +1,4 @@
-TARGET := out
+TARGET := td4
 
 SRCDIR := ./src
 BUILDDIR := ./build
@@ -19,8 +19,8 @@ CXX := clang++
 LD := ld.lld
 
 CFLAGS := -O2 -Wall -Wextra
-CXXFLAGS := -O2 -Wall -Wextra -std=c++20
-LDFLAGS := -O2 -Wall -Wextra
+CXXFLAGS := -O2 -Wall -Wextra -std=c++20 -flto=thin -g -fsanitize=address
+LDFLAGS := -O2 -Wall -Wextra -flto=thin -g -fsanitize=address
 
 CPPFLAGS := $(INCFLAGS) -MMD -MP
 
