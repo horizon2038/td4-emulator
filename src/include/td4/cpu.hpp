@@ -34,6 +34,8 @@ namespace td4
             std::unique_ptr<input_port>  target_input,
             std::unique_ptr<output_port> target_output
         );
+        void register_input_port(std::unique_ptr<input_port> target_input);
+        void register_output_port(std::unique_ptr<output_port> target_output);
         void register_rom(std::unique_ptr<rom> target_rom);
 
         void    clock(void);

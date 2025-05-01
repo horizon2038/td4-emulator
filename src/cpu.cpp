@@ -21,9 +21,20 @@ namespace td4
         std::unique_ptr<output_port> target_output
     )
     {
-        input  = std::move(target_input);
+        register_input_port(std::move(target_input));
+        register_output_port(std::move(target_output));
+    }
+
+    void cpu::register_input_port(std::unique_ptr<input_port> target_input)
+    {
+        input = std::move(target_input);
+        std::cout << "[td4] register input port" << std::endl;
+    }
+
+    void cpu::register_output_port(std::unique_ptr<output_port> target_output)
+    {
         output = std::move(target_output);
-        std::cout << "[td4] register input/output ports" << std::endl;
+        std::cout << "[td4] register output port" << std::endl;
     }
 
     void cpu::register_rom(std::unique_ptr<rom> target_rom)
